@@ -6,56 +6,7 @@
 
     <title>Piedra, papel o tijera</title>
 
-    <script>
-        function aleatorio(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
-
-        //1 es piedra, 2 es papel, 3 es tijera
-        let jugador = 0
-
-        //Creamos un aleatorio para que la opción del PC sea aleatoria (Entre 1 y 3)
-        let pc = aleatorio(1, 3)
-        jugador = prompt("🖖¡Hola! ingresa el número de tu elección:\n🪨 PIEDRA es 1, 📄 PAPEL es 2 y ✂️ TIJERA es 3")
-        //alert("Elegiste " + jugador)
-
-        //Hacemos un condicional principal para que solo se juegue si el usuario pone un número del 1 al 3
-        if (jugador == 1 || jugador == 2 || jugador == 3) {
-            if (jugador == 1) {
-                alert("Elegiste 🪨")
-            }
-            else if (jugador == 2) {
-                alert("Elegiste 📄")
-            }
-            else if (jugador == 3) {
-                alert("Elegiste ✂️")
-            }
-
-            if (pc == 1) {
-                alert("PC elige 🪨")
-            }
-            else if (pc == 2) {
-                alert("PC elige 📄")
-            }
-            else if (pc == 3) {
-                alert("PC elige ✂️")
-            }
-
-            //Combate
-            if (pc == jugador) {
-                alert("EMPATE")
-            }
-            else if ((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)) {
-                alert("GANASTE")
-            }
-            else {
-                alert("PERDISTE")
-            }
-        }
-        else {
-            alert("Elige piedra, papel o tijera ( 1 al 3)")
-        }
-    </script>
+    <script src="js/código.js"> </script>
 </head>
 
 
