@@ -5,6 +5,8 @@ function iniciarJuego() {
 
 function seleccionarMascotaJugador() {
 
+    //Variable booleana para cuando se seleccione una mascota
+    let juego = 1;
     let inputHipodoge = document.getElementById("Hipodoge")
     let inputCapipepo = document.getElementById("Capipepo")
     let inputRatigueya = document.getElementById("Ratigueya")
@@ -21,9 +23,34 @@ function seleccionarMascotaJugador() {
     }
     else {
         alert("Selecciona alguna mascota")
+        juego = 0
+    }
+
+
+    if (juego == 1) {
+        seleccionarMascotaEnemigo()
     }
 }
 
+function seleccionarMascotaEnemigo() {
+    let ataqueAleatorio = aleatorio(1, 3)
+    let spanMascotaEnemigo = document.getElementById("mascota-enemigo")
+
+    if (ataqueAleatorio == 1) {
+        spanMascotaEnemigo.innerHTML = "Hipodoge"
+    }
+    else if (ataqueAleatorio == 2) {
+        spanMascotaEnemigo.innerHTML = "Capipepo"
+    }
+    else {
+        spanMascotaEnemigo.innerHTML = "Ratigueya"
+    }
+
+}
+
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 
 window.addEventListener("load", iniciarJuego)
