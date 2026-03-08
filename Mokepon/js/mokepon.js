@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById("boton-mascota")
@@ -93,20 +95,39 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
+
+    let spanVidasJugador = document.getElementById("vidas-jugador")
+    let spanVidasEnemigo = document.getElementById("vidas-enemigo")
+
     if (ataqueEnemigo == ataqueJugador) {
         crearMensaje("EMPATE")
     }
-    else if ((ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") || (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") || (ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA")) {
+    else if ((ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA")
+        || (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO")
+        || (ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA")) {
         crearMensaje("GANASTE")
-
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }
+
     else {
         crearMensaje("PERDISTE")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
 
+    revisarVidas()
+}
+
+function revisarVidas() {
+    if (vidasEnemigo == 0) {
+        crearMensajeFinal("FELICITACIONES! GANASTE")
+    }
+    else if (vidasJugador == 0) {
+        crearMensajeFinal("LO SIENTO, PERDISTE :(  ")
     }
 
 }
-
 
 
 function crearMensaje(resultado) {
@@ -117,7 +138,14 @@ function crearMensaje(resultado) {
     sectionMensajes.appendChild(parrafo)
 }
 
+function crearMensajeFinal(resultadoFinal) {
+    let sectionMensajes = document.getElementById("mensajes")
 
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML = resultadoFinal
+    sectionMensajes.appendChild(parrafo)
+
+}
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
