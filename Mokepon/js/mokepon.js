@@ -55,6 +55,7 @@ function seleccionarMascotaJugador() {
     else {
         alert("Selecciona alguna mascota")
         juego = 0
+        reiniciarJuego()
     }
 
 
