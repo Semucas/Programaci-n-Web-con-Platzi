@@ -33,7 +33,7 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = "none"
 
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
-    sectionSeleccionarAtaque.style.display = "block"
+    sectionSeleccionarAtaque.style.display = "flex"
 
 
     //Variable booleana para cuando se seleccione una mascota
