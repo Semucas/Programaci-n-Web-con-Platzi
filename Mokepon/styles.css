@@ -92,6 +92,7 @@ input:checked+label {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 #boton-reiniciar {
@@ -104,6 +105,8 @@ input:checked+label {
     display: grid;
     grid-template-columns: 100px 100px;
     color: white;
+    border: 2px solid red;
+    border-radius: 0px;
 
 
 }
