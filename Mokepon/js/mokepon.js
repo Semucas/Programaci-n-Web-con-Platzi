@@ -29,6 +29,7 @@ class Mokepon {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
+        this.ataques = []
     }
 }
 
@@ -38,9 +39,31 @@ let capipepo = new Mokepon("Capipepo", "./img/Capipepo.png", 5)
 
 let ratigueya = new Mokepon("Ratigueya", "./img/Ratigueya.png", 5)
 
-mokepones.push(hipodoge, capipepo, ratigueya)
+hipodoge.ataques.push(
+    { nombre: "💧", id: "boton-agua" },
+    { nombre: "💧", id: "boton-agua" },
+    { nombre: "💧", id: "boton-agua" },
+    { nombre: "🔥", id: "boton-fuego" },
+    { nombre: "🌱", id: "boton-tierra" }
+)
 
-console.log(mokepones)
+capipepo.ataques.push(
+    { nombre: "🌱", id: "boton-tierra" },
+    { nombre: "🌱", id: "boton-tierra" },
+    { nombre: "🌱", id: "boton-tierra" },
+    { nombre: "💧", id: "boton-agua" },
+    { nombre: "🔥", id: "boton-fuego" }
+
+)
+ratigueya.ataques.push(
+    { nombre: "🔥", id: "boton-fuego" },
+    { nombre: "🔥", id: "boton-fuego" },
+    { nombre: "🔥", id: "boton-fuego" },
+    { nombre: "💧", id: "boton-agua" },
+    { nombre: "🌱", id: "boton-tierra" }
+
+)
+
 
 function iniciarJuego() {
 
